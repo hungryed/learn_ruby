@@ -36,7 +36,7 @@
 #     Failures:
 #
 #       1) the hello function says hello
-#          Failure/Error: hello.should == "Hello!"
+#)          Failure/Error: hello == "Hello!"
 #          NameError:
 #            undefined local variable or method `hello' for #<RSpec::Core::ExampleGroup::Nested_1:0x000001009b8808>
 #          # ./hello/hello_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -60,7 +60,7 @@
 #     Failures:
 #
 #       1) the hello function says hello
-#          Failure/Error: hello().should == "Hello!"
+#)          Failure/Error: hello() == "Hello!"
 #            expected: "Hello!"
 #                 got: nil (using ==)
 #          # ./hello/hello_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -82,7 +82,7 @@
 # Now you should see an error like this:
 #
 #     1) the hello function says hello
-#        Failure/Error: hello().should == "Hello!"
+#)        Failure/Error: hello() == "Hello!"
 #          expected: "Hello!"
 #               got: "whuh?" (using ==)
 #        # ./hello/hello_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -117,16 +117,16 @@ require "hello"
 
 describe "the hello function" do
   it "says hello" do
-    hello.should == "Hello!"
+    expect(hello).to eq "Hello!"
   end
 end
 
 describe "the greet function" do
   it "says hello to someone" do
-    greet("Alice").should == "Hello, Alice!"
+    expect(greet("Alice")).to eq "Hello, Alice!"
   end
 
   it "says hello to someone else" do
-    greet("Bob").should == "Hello, Bob!"
+    expect(greet("Bob")).to eq "Hello, Bob!"
   end
 end
